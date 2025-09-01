@@ -27,7 +27,7 @@ const Index = () => {
       <footer className="border-t border-foreground-subtle/20 py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-foreground-muted">
-            © 2024 Shakti Singh Rathaur. Built with React, Next.js & Tailwind CSS.
+            © 2024 Shakti Singh Rathaur.
           </p>
         </div>
       </footer>

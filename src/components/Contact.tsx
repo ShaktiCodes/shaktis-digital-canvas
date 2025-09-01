@@ -8,23 +8,9 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "shakti.rathaur@example.com",
-      href: "mailto:shakti.rathaur@example.com",
+      value: "ssrrathaur068@gmail.com",
+      href: "mailto:ssrrathaur068@gmail.com",
       color: "primary"
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
-      color: "secondary"
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      label: "Location",
-      value: "Mumbai, India",
-      href: "#",
-      color: "accent"
     }
   ];
 
@@ -83,28 +69,6 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold text-secondary mb-6">Follow Me</h3>
-              <div className="space-y-4">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl glass-card-hover transition-all duration-300 hover:scale-105"
-                  >
-                    <div className={`p-3 rounded-xl bg-${social.color}/20 text-${social.color}`}>
-                      {social.icon}
-                    </div>
-                    <div>
-                      <div className="text-sm text-foreground-subtle">{social.label}</div>
-                      <div className="text-foreground font-semibold">{social.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
 
             <div className="glass-card p-6 rounded-2xl">
               <h4 className="text-lg font-bold text-accent mb-4">Quick Stats</h4>

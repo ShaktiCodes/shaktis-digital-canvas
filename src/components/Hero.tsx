@@ -33,27 +33,36 @@ const Hero = () => {
             variant="outline" 
             size="lg"
             className="glass-card interactive-hover border-foreground-subtle/30 text-foreground-muted hover:text-foreground hover:border-primary/30 px-8 py-6 text-lg"
+            asChild
           >
-            <Github className="w-5 h-5 mr-2" />
-            View Projects
+            <a href="https://github.com/ShaktiCodes" target="_blank" rel="noopener noreferrer">
+              <Github className="w-5 h-5 mr-2" />
+              View Projects
+            </a>
           </Button>
         </div>
 
         <div className="flex justify-center gap-6 mb-16">
           <a 
-            href="https://github.com" 
+            href="https://github.com/ShaktiCodes" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-card p-4 rounded-full interactive-hover border-foreground-subtle/20 hover:border-primary/30"
           >
             <Github className="w-6 h-6 text-foreground-muted hover:text-primary transition-colors" />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/shakti-singh-rathaur-37948b20a/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-card p-4 rounded-full interactive-hover border-foreground-subtle/20 hover:border-secondary/30"
           >
             <Linkedin className="w-6 h-6 text-foreground-muted hover:text-secondary transition-colors" />
           </a>
           <a 
-            href="mailto:shakti@example.com" 
+            href="https://www.hackerrank.com/profile/ssrsecret1" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-card p-4 rounded-full interactive-hover border-foreground-subtle/20 hover:border-accent/30"
           >
             <Mail className="w-6 h-6 text-foreground-muted hover:text-accent transition-colors" />

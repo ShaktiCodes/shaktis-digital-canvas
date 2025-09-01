@@ -15,8 +15,7 @@ const Projects = () => {
         "Interactive learning modules",
         "Advanced analytics dashboard"
       ],
-      github: "https://github.com",
-      live: "https://mindtrack-lms.com",
+      github: "https://github.com/ShaktiCodes/LMS",
       image: "project1",
       color: "primary",
       icon: <Users className="w-6 h-6" />
@@ -33,8 +32,7 @@ const Projects = () => {
         "Responsive cross-device design",
         "Advanced message filtering"
       ],
-      github: "https://github.com",
-      live: "https://neo-chat.com",
+      github: "https://github.com/ShaktiCodes/plugin-powered-chat-hub",
       image: "project2",
       color: "secondary",
       icon: <Brain className="w-6 h-6" />
@@ -103,17 +101,12 @@ const Projects = () => {
                 <Button 
                   size="sm" 
                   className={`interactive-hover bg-${project.color}/20 hover:bg-${project.color}/30 border-${project.color}/30 text-${project.color}`}
+                  asChild
                 >
-                  <Github className="w-4 h-4 mr-2" />
-                  Code
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="interactive-hover border-foreground-subtle/30 text-foreground-muted hover:text-foreground hover:border-accent/30"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Live Demo
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" />
+                    Code
+                  </a>
                 </Button>
               </div>
 
@@ -131,9 +124,12 @@ const Projects = () => {
           <Button 
             size="lg"
             className="glass-card interactive-hover bg-accent/20 hover:bg-accent/30 border-accent/30 text-accent px-8 py-6"
+            asChild
           >
-            View All Projects
-            <ExternalLink className="w-5 h-5 ml-2" />
+            <a href="https://github.com/ShaktiCodes" target="_blank" rel="noopener noreferrer">
+              View All Projects
+              <ExternalLink className="w-5 h-5 ml-2" />
+            </a>
           </Button>
         </div>
       </div>
