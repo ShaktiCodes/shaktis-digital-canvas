@@ -1,97 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Portfolio Design System - Dark Theme */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark Portfolio Color Palette */
+    --background: 222 20% 6%;
+    --background-secondary: 222 20% 8%;
+    --background-tertiary: 222 20% 12%;
     --foreground: 210 40% 98%;
+    --foreground-muted: 215 20% 65%;
+    --foreground-subtle: 215 15% 40%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Brand Colors */
+    --primary: 249 86% 68%;
+    --primary-glow: 249 86% 75%;
+    --primary-dark: 249 86% 55%;
+    --secondary: 189 95% 65%;
+    --accent: 314 100% 75%;
+    --accent-secondary: 45 93% 70%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* UI Elements */
+    --card: 222 20% 8%;
+    --card-hover: 222 20% 10%;
+    --border: 222 20% 15%;
+    --border-subtle: 222 20% 12%;
+    --shadow: 222 20% 3%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-secondary)));
+    --gradient-background: radial-gradient(ellipse at top, hsl(222 20% 8%), hsl(222 20% 6%));
+    --gradient-card: linear-gradient(135deg, hsl(222 20% 8% / 0.5), hsl(222 20% 12% / 0.3));
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Effects */
+    --glow-primary: 0 0 40px hsl(var(--primary) / 0.3);
+    --glow-accent: 0 0 30px hsl(var(--accent) / 0.2);
+    --shadow-card: 0 8px 32px hsl(var(--shadow) / 0.4);
+    --shadow-elevated: 0 16px 64px hsl(var(--shadow) / 0.6);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 16px;
+    --radius-lg: 24px;
   }
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* 3D Entry Animation */
+  .hero-enter {
+    animation: hero-entrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform: perspective(1000px) rotateY(-15deg) translateY(50px);
+    opacity: 0;
+  }
+
+  /* Glass Card Effects */
+  .glass-card {
+    @apply backdrop-blur-xl bg-card/30 border border-border;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:bg-card-hover/40 hover:border-primary/20;
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card-hover:hover {
+    box-shadow: var(--shadow-elevated), var(--glow-primary);
+    transform: translateY(-4px);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-accent-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Interactive Elements */
+  .interactive-hover {
+    @apply transition-all duration-300 hover:scale-105;
+    transition: var(--transition-bounce);
+  }
+
+  .interactive-hover:hover {
+    box-shadow: var(--glow-primary);
+  }
+
+  /* Skills Grid Animation */
+  .skill-card {
+    @apply transition-all duration-300 hover:bg-primary/10 hover:border-primary/30;
+    transition: var(--transition-smooth);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px) rotateX(5deg);
+    box-shadow: var(--glow-primary);
+  }
+
+  /* Project Card 3D Effect */
+  .project-card {
+    @apply transition-all duration-500;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .project-card:hover {
+    transform: rotateY(5deg) rotateX(2deg) translateZ(20px);
+    box-shadow: var(--shadow-elevated), var(--glow-accent);
+  }
+
+  /* Navigation Link Animation */
+  .nav-link {
+    @apply relative transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes hero-entrance {
+  0% {
+    transform: perspective(1000px) rotateY(-15deg) translateY(50px);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-5deg) translateY(25px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg) translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: var(--glow-primary);
+  }
+  50% {
+    box-shadow: var(--glow-accent);
+  }
+}
+
+/* Utility Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
 }
 
 @layer base {
